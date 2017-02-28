@@ -5,4 +5,4 @@ var Player = (function () {
     return Player;
 }());
 exports.Player = Player;
-//# sourceMappingURL=hero.js.map
+//# sourceMappingURL=player.js.map

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Hero } from './hero';
+import { Player } from './player';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 import { OnInit } from '@angular/core';
@@ -12,10 +12,10 @@ import { OnInit } from '@angular/core';
   templateUrl: 'heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class PlayersComponent implements OnInit {
 
-  heroes: Hero[];
-  selectedHero: Hero;
+  players: Player[];
+  selectedPlayer: Player;
 
   constructor(private router: Router, private heroService: HeroService) { }
 
@@ -23,36 +23,36 @@ export class HeroesComponent implements OnInit {
   //   this.heroes = this.heroService.getHeroes();
   // }
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.players = heroes);
   }
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
     this.heroService.create(name)
       .then(hero => {
-        this.heroes.push(hero);
-        this.selectedHero = null;
+        this.players.push(hero);
+        this.selectedPlayer = null;
       });
   }
 
-  delete(hero: Hero): void {
+  delete(player: Player): void {
     this.heroService
-      .delete(hero.id)
+      .delete(player.id)
       .then(() => {
-        this.heroes = this.heroes.filter(h => h !== hero);
-        if (this.selectedHero === hero) { this.selectedHero = null; }
+        this.players = this.players.filter(h => h !== player);
+        if (this.selectedPlayer === player) { this.selectedPlayer = null; }
       });
   }
 
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
+  onSelect(player: Player): void {
+    this.selectedPlayer = player;
   }
 
   ngOnInit(): void {
     this.getHeroes();
   }
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+    this.router.navigate(['/detail', this.selectedPlayer.id]);
   }
 }

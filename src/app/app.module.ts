@@ -13,7 +13,7 @@ import{InMemoryDataService} from './in-memory-data.service';
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HeroesComponent } from './heroes.component';
+import { PlayersComponent } from './players.component';
 import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
 import {HeroSearchComponent} from './hero-search.component';
@@ -23,7 +23,7 @@ import{AppRoutingModule} from './app-routing.module';
   imports:      [ BrowserModule,FormsModule,AppRoutingModule,HttpModule,
                     InMemoryWebApiModule.forRoot(InMemoryDataService),
                     ],
-  declarations: [ AppComponent,HeroDetailComponent,HeroesComponent,DashboardComponent,HeroSearchComponent ],
+  declarations: [ AppComponent,HeroDetailComponent,PlayersComponent,DashboardComponent,HeroSearchComponent ],
   bootstrap:    [ AppComponent ],
   providers:[HeroService]
 })
