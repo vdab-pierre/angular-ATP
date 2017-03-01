@@ -12,7 +12,7 @@ import { PlayerSearchService } from './player-search.service';
 import { Player } from './player';
 @Component({
     moduleId: module.id,
-    selector: 'hero-search',
+    selector: 'player-search',
     templateUrl: './player-search.component.html',
     styleUrls: ['./player-search.component.css'],
     providers: [PlayerSearchService]
@@ -34,7 +34,7 @@ export class PlayerSearchComponent implements OnInit {
             .switchMap(term => term   // switch to new observable each time the term changes
                 // return the http search observable
                 ? this.playerSearchService.search(term)
-                // or the observable of empty heroes if there was no search term
+                // or the observable of empty players if there was no search term
                 : Observable.of<Player[]>([]))
             .catch(error => {
                 // TODO: add real error handling

@@ -50,7 +50,7 @@ var PlayerSearchComponent = (function () {
     PlayerSearchComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'hero-search',
+            selector: 'player-search',
             templateUrl: './player-search.component.html',
             styleUrls: ['./player-search.component.css'],
             providers: [player_search_service_1.PlayerSearchService]

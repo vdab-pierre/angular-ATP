@@ -49,7 +49,7 @@ export class PlayerService {
     }
 
     update(player: Player): Promise<Player> {
-        const url = `${this.players}/${player.id}`;
+        const url = `${this.playersUrl}/${player.id}`;
         return this.http
             .put(url, JSON.stringify(player), { headers: this.headers })
             .toPromise()

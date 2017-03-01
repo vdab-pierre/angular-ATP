@@ -49,7 +49,7 @@ var PlayerService = (function () {
         return Promise.reject(error.message || error);
     };
     PlayerService.prototype.update = function (player) {
-        var url = this.players + "/" + player.id;
+        var url = this.playersUrl + "/" + player.id;
         return this.http
             .put(url, JSON.stringify(player), { headers: this.headers })
             .toPromise()

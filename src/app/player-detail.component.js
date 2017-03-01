@@ -41,7 +41,7 @@ var PlayerDetailComponent = (function () {
     PlayerDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-hero-detail',
+            //selector: 'my-player-detail',
             templateUrl: 'player-detail.component.html',
             styleUrls: ['player-detail.component.css']
         }), 

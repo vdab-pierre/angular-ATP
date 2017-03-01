@@ -6,9 +6,10 @@ label {
   font-weight: bold;
 }
 input {
-  height: 2em;
+  height: 1.1em;
   font-size: 1em;
   padding-left: .4em;
+  margin-left: 1em
 }
 button {
   margin-top: 20px;
