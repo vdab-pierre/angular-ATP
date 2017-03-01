@@ -36,7 +36,7 @@ var HeroDetailComponent = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', player_1.Player)
+        __metadata('design:type', (typeof (_a = typeof player_1.Player !== 'undefined' && player_1.Player) === 'function' && _a) || Object)
     ], HeroDetailComponent.prototype, "player", void 0);
     HeroDetailComponent = __decorate([
         core_1.Component({
@@ -45,9 +45,10 @@ var HeroDetailComponent = (function () {
             templateUrl: 'hero-detail.component.html',
             styleUrls: ['hero-detail.component.css']
         }), 
-        __metadata('design:paramtypes', [player_service_1.PlayerService, router_1.ActivatedRoute, common_1.Location])
+        __metadata('design:paramtypes', [(typeof (_b = typeof player_service_1.PlayerService !== 'undefined' && player_service_1.PlayerService) === 'function' && _b) || Object, router_1.ActivatedRoute, common_1.Location])
     ], HeroDetailComponent);
     return HeroDetailComponent;
+    var _a, _b;
 }());
 exports.HeroDetailComponent = HeroDetailComponent;
 //# sourceMappingURL=hero-detail.component.js.map

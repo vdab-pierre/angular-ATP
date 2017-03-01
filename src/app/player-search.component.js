@@ -31,7 +31,7 @@ var PlayerSearchComponent = (function () {
     };
     PlayerSearchComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.heroes = this.searchTerms
+        this.players = this.searchTerms
             .debounceTime(300) // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged() // ignore if next search term is same as previous
             .switchMap(function (term) { return term // switch to new observable each time the term changes
@@ -51,8 +51,8 @@ var PlayerSearchComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'hero-search',
-            templateUrl: './hero-search.component.html',
-            styleUrls: ['./hero-search.component.css'],
+            templateUrl: './player-search.component.html',
+            styleUrls: ['./player-search.component.css'],
             providers: [player_search_service_1.PlayerSearchService]
         }), 
         __metadata('design:paramtypes', [player_search_service_1.PlayerSearchService, router_1.Router])

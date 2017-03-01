@@ -13,12 +13,12 @@ import { Player } from './player';
 @Component({
     moduleId: module.id,
     selector: 'hero-search',
-    templateUrl: './hero-search.component.html',
-    styleUrls: ['./hero-search.component.css'],
+    templateUrl: './player-search.component.html',
+    styleUrls: ['./player-search.component.css'],
     providers: [PlayerSearchService]
 })
 export class PlayerSearchComponent implements OnInit {
-    heroes: Observable<Player[]>;
+    players: Observable<Player[]>;
     private searchTerms = new Subject<string>();
     constructor(
         private playerSearchService: PlayerSearchService,
@@ -28,7 +28,7 @@ export class PlayerSearchComponent implements OnInit {
         this.searchTerms.next(term);
     }
     ngOnInit(): void {
-        this.heroes = this.searchTerms
+        this.players = this.searchTerms
             .debounceTime(300)        // wait 300ms after each keystroke before considering the term
             .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time the term changes
