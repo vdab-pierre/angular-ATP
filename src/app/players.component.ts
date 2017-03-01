@@ -3,40 +3,36 @@ import { Router } from '@angular/router';
 
 import { Player } from './player';
 import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { PlayerService } from './player.service';
 import { OnInit } from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-heroes',
-  templateUrl: 'heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  templateUrl: 'players.component.html',
+  styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
 
   players: Player[];
   selectedPlayer: Player;
 
-  constructor(private router: Router, private heroService: HeroService) { }
+  constructor(private router: Router, private playerService: PlayerService) { }
 
-  // getHeroes(): void {
-  //   this.heroes = this.heroService.getHeroes();
-  // }
-  getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.players = heroes);
+  getPlayers(): void {
+    this.playerService.getPlayers().then(players => this.players = players);
   }
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.create(name)
-      .then(hero => {
-        this.players.push(hero);
+    this.playerService.create(name)
+      .then(player => {
+        this.players.push(player);
         this.selectedPlayer = null;
       });
   }
 
   delete(player: Player): void {
-    this.heroService
+    this.playerService
       .delete(player.id)
       .then(() => {
         this.players = this.players.filter(h => h !== player);
@@ -50,7 +46,7 @@ export class PlayersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getPlayers();
   }
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedPlayer.id]);

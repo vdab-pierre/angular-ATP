@@ -3,8 +3,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
-import { Hero } from './hero'
-import { HeroService } from './hero.service';
+import { Player } from './player'
+import { PlayerService } from './player.service';
 
 @Component({
   moduleId: module.id,
@@ -14,15 +14,15 @@ import { HeroService } from './hero.service';
 })
 export class HeroDetailComponent implements OnInit {
   @Input()
-  hero: Hero;
+  player: Player;
   constructor(
-    private heroService: HeroService,
+    private playerService: PlayerService,
     private route: ActivatedRoute,
     private location: Location
   ) { }
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.heroService.getHero(+params['id']))
+      .switchMap((params: Params) => this.playerService.getPlayer(+params['id']))
       .subscribe(hero => this.hero = hero);
   }
   goBack(): void {

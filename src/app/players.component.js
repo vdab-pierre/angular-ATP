@@ -10,18 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_service_1 = require('./hero.service');
+var player_service_1 = require('./player.service');
 var PlayersComponent = (function () {
-    function PlayersComponent(router, heroService) {
+    function PlayersComponent(router, playerService) {
         this.router = router;
-        this.heroService = heroService;
+        this.playerService = playerService;
     }
-    // getHeroes(): void {
-    //   this.heroes = this.heroService.getHeroes();
-    // }
-    PlayersComponent.prototype.getHeroes = function () {
+    PlayersComponent.prototype.getPlayers = function () {
         var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.players = heroes; });
+        this.playerService.getPlayers().then(function (players) { return _this.players = players; });
     };
     PlayersComponent.prototype.add = function (name) {
         var _this = this;
@@ -29,15 +26,15 @@ var PlayersComponent = (function () {
         if (!name) {
             return;
         }
-        this.heroService.create(name)
-            .then(function (hero) {
-            _this.players.push(hero);
+        this.playerService.create(name)
+            .then(function (player) {
+            _this.players.push(player);
             _this.selectedPlayer = null;
         });
     };
     PlayersComponent.prototype.delete = function (player) {
         var _this = this;
-        this.heroService
+        this.playerService
             .delete(player.id)
             .then(function () {
             _this.players = _this.players.filter(function (h) { return h !== player; });
@@ -50,7 +47,7 @@ var PlayersComponent = (function () {
         this.selectedPlayer = player;
     };
     PlayersComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
+        this.getPlayers();
     };
     PlayersComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedPlayer.id]);
@@ -58,11 +55,10 @@ var PlayersComponent = (function () {
     PlayersComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-heroes',
-            templateUrl: 'heroes.component.html',
-            styleUrls: ['./heroes.component.css']
+            templateUrl: 'players.component.html',
+            styleUrls: ['./players.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
+        __metadata('design:paramtypes', [router_1.Router, player_service_1.PlayerService])
     ], PlayersComponent);
     return PlayersComponent;
 }());

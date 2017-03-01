@@ -21,7 +21,7 @@ var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var players_component_1 = require('./players.component');
-var hero_service_1 = require('./hero.service');
+var player_service_1 = require('./player.service');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_search_component_1 = require('./hero-search.component');
 var app_routing_module_1 = require('./app-routing.module');
@@ -35,7 +35,7 @@ var AppModule = (function () {
             ],
             declarations: [app_component_1.AppComponent, hero_detail_component_1.HeroDetailComponent, players_component_1.PlayersComponent, dashboard_component_1.DashboardComponent, hero_search_component_1.HeroSearchComponent],
             bootstrap: [app_component_1.AppComponent],
-            providers: [hero_service_1.HeroService]
+            providers: [player_service_1.PlayerService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

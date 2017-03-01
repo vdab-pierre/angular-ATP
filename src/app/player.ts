@@ -5,7 +5,4 @@ export class Player {
   age:number;
   points:number;
   tournsPlayed:number;
-  forehand:string;
-  backhand:string;
-  height:number;
 }
