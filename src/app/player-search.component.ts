@@ -8,20 +8,20 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import { HeroSearchService } from './hero-search.service';
-import { Hero } from './hero';
+import { PlayerSearchService } from './player-search.service';
+import { Player } from './player';
 @Component({
     moduleId: module.id,
     selector: 'hero-search',
     templateUrl: './hero-search.component.html',
     styleUrls: ['./hero-search.component.css'],
-    providers: [HeroSearchService]
+    providers: [PlayerSearchService]
 })
-export class HeroSearchComponent implements OnInit {
-    heroes: Observable<Hero[]>;
+export class PlayerSearchComponent implements OnInit {
+    heroes: Observable<Player[]>;
     private searchTerms = new Subject<string>();
     constructor(
-        private heroSearchService: HeroSearchService,
+        private playerSearchService: PlayerSearchService,
         private router: Router) { }
     // Push a search term into the observable stream.
     search(term: string): void {
@@ -33,17 +33,17 @@ export class HeroSearchComponent implements OnInit {
             .distinctUntilChanged()   // ignore if next search term is same as previous
             .switchMap(term => term   // switch to new observable each time the term changes
                 // return the http search observable
-                ? this.heroSearchService.search(term)
+                ? this.playerSearchService.search(term)
                 // or the observable of empty heroes if there was no search term
-                : Observable.of<Hero[]>([]))
+                : Observable.of<Player[]>([]))
             .catch(error => {
                 // TODO: add real error handling
                 console.log(error);
-                return Observable.of<Hero[]>([]);
+                return Observable.of<Player[]>([]);
             });
     }
-    gotoDetail(hero: Hero): void {
-        let link = ['/detail', hero.id];
+    gotoDetail(player: Player): void {
+        let link = ['/detail', player.id];
         this.router.navigate(link);
     }
 }

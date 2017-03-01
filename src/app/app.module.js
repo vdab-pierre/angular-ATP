@@ -19,11 +19,11 @@ var http_1 = require('@angular/http');
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
-var hero_detail_component_1 = require('./hero-detail.component');
+var player_detail_component_1 = require('./player-detail.component');
 var players_component_1 = require('./players.component');
 var player_service_1 = require('./player.service');
 var dashboard_component_1 = require('./dashboard.component');
-var hero_search_component_1 = require('./hero-search.component');
+var player_search_component_1 = require('./player-search.component');
 var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
     function AppModule() {
@@ -33,7 +33,7 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
             ],
-            declarations: [app_component_1.AppComponent, hero_detail_component_1.HeroDetailComponent, players_component_1.PlayersComponent, dashboard_component_1.DashboardComponent, hero_search_component_1.HeroSearchComponent],
+            declarations: [app_component_1.AppComponent, player_detail_component_1.PlayerDetailComponent, players_component_1.PlayersComponent, dashboard_component_1.DashboardComponent, player_search_component_1.PlayerSearchComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [player_service_1.PlayerService]
         }), 
