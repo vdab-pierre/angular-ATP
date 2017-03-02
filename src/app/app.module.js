@@ -14,6 +14,9 @@ var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./in-memory-data.service');
+//bootstrap alert import part1
+var ng2_bootstrap_1 = require('ng2-bootstrap');
+//import{CollapseModule}from 'ng2-bootstrap';
 var app_component_1 = require('./app.component');
 var player_detail_component_1 = require('./player-detail.component');
 var players_component_1 = require('./players.component');
@@ -28,6 +31,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule, http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                //bootstrap alert import part2
+                ng2_bootstrap_1.AlertModule.forRoot(),
             ],
             declarations: [app_component_1.AppComponent, player_detail_component_1.PlayerDetailComponent, players_component_1.PlayersComponent, dashboard_component_1.DashboardComponent, player_search_component_1.PlayerSearchComponent],
             bootstrap: [app_component_1.AppComponent],
