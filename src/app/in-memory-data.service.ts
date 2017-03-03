@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 15, name: 'Milos Raonic',country:'Canada',age:26,points:5080,tournsPlayed:20},
       {id: 16, name: 'Kei Nishikori',country:'Japan',age:27,points:4730,tournsPlayed:20},
       {id: 17, name: 'Rafael Nadal',country:'Spain',age:30,points:4115,tournsPlayed:14},
-      {id: 18, name: 'Jo-Wilfried Tsonga',country:'France',age:31,points:3480,tournsPlayed:1618},
+      {id: 18, name: 'Jo-Wilfried Tsonga',country:'France',age:31,points:3480,tournsPlayed:18},
       {id: 19, name: 'Marin Cilic',country:'Croatia',age:28,points:3410,tournsPlayed:20},
       {id: 21, name: 'Dominic Thiem',country:'Austria',age:23,points:3375,tournsPlayed:28},
       {id: 22, name: 'Roger Federer',country:'Suisse',age:35,points:3260,tournsPlayed:14},

@@ -56,7 +56,6 @@ var PlayersComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             templateUrl: 'players.component.html',
-            styleUrls: ['./players.component.css']
         }), 
         __metadata('design:paramtypes', [router_1.Router, player_service_1.PlayerService])
     ], PlayersComponent);

@@ -1,16 +1,38 @@
 <h2>Players</h2>
 <div>
-    <label>Player name:</label> <input #playerName />
-    <button (click)="add(playerName.value); playerName.value=''">
+    <label for="playerName">Player name:</label> <input #playerName />
+    <button class="btn btn-default" (click)="add(playerName.value); playerName.value=''">
     Add
   </button>
 </div>
-<ul class="players">
-    <li *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
-        <span class="badge">{{player.id}}</span><span>{{player.name}}</span>
-        <button class="delete" (click)="delete(player); $event.stopPropagation()">x</button>
+<!--<ul class="list-group">
+    <li class="list-group-item" *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
+        <span>{{player.name}}</span>
+        <button (click)="delete(player); $event.stopPropagation()">x</button>
     </li>
-</ul>
+</ul>-->
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Age</th>
+        <th>Points</th>
+        <th>Tournaments Played</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players;let i = index" (click)="onSelect(player)" [class.selected]="player === selectedPlayer" role="button">
+        <td>{{i+1}}</td>
+        <td>{{player.name}}</td>
+        <td>{{player.country}}</td>
+        <td>{{player.age}}</td>
+        <td>{{player.points}}</td>
+        <td>{{player.tournsPlayed}}</td>
+      </tr>
+    </tbody>
+  </table>
 <div *ngIf="selectedPlayer">
     <h2>
         {{selectedPlayer.name | uppercase}}

@@ -20,7 +20,7 @@ var PlayerService = (function () {
     PlayerService.prototype.getPlayers = function () {
         return this.http.get(this.playersUrl)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (response) { return response.json().data.sort(function (a, b) { return b.points - a.points; }); })
             .catch(this.handleError);
     };
     PlayerService.prototype.getPlayer = function (id) {

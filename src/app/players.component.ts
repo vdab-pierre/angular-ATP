@@ -9,7 +9,7 @@ import { OnInit } from '@angular/core';
 @Component({
   moduleId: module.id,
   templateUrl: 'players.component.html',
-  styleUrls: ['./players.component.css']
+  //styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
 
@@ -39,7 +39,6 @@ export class PlayersComponent implements OnInit {
         if (this.selectedPlayer === player) { this.selectedPlayer = null; }
       });
   }
-
 
   onSelect(player: Player): void {
     this.selectedPlayer = player;

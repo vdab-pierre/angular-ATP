@@ -15,9 +15,11 @@ export class PlayerService {
     getPlayers(): Promise<Player[]> {
         return this.http.get(this.playersUrl)
             .toPromise()
-            .then(response => response.json().data as Player[])
+            .then(response => (response.json().data as Player[]).sort(function(a,b){return b.points - a.points}))
             .catch(this.handleError);
     }
+
+   
 
     getPlayer(id: number): Promise<Player> {
         const url = `${this.playersUrl}/${id}`;
@@ -56,6 +58,4 @@ export class PlayerService {
             .then(() => player)
             .catch(this.handleError);
     }
-
-
 }
