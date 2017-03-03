@@ -30,9 +30,9 @@ var PlayerService = (function () {
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
-    PlayerService.prototype.create = function (name) {
+    PlayerService.prototype.create = function (name, country) {
         return this.http
-            .post(this.playersUrl, JSON.stringify({ name: name }), { headers: this.headers })
+            .post(this.playersUrl, JSON.stringify({ name: name, country: country }), { headers: this.headers })
             .toPromise()
             .then(function (res) { return res.json().data; })
             .catch(this.handleError);

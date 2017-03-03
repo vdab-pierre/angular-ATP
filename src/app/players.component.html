@@ -1,16 +1,13 @@
 <h2>Players</h2>
-<div>
-    <label for="playerName">Player name:</label> <input #playerName />
-    <button class="btn btn-default" (click)="add(playerName.value); playerName.value=''">
-    Add
-  </button>
+<div class="form-group">
+    <label for="playerName">Player name</label> <input class="form-control" #playerName />
+    <label for="playerCountry">Country</label> <input class="form-control" #playerCountry />
+    <label for="playerAge">Age</label> <input class="form-control" #playerAge />
+    <label for="playerPoints">Points</label> <input class="form-control" #playerPoints />
+    <label for="playerTourns">Tournaments played</label> <input class="form-control" #playerTourns />
+    <button class="btn btn-primary" (click)="add(playerName.value,playerCountry.value); playerName.value=''">Add</button>
 </div>
-<!--<ul class="list-group">
-    <li class="list-group-item" *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
-        <span>{{player.name}}</span>
-        <button (click)="delete(player); $event.stopPropagation()">x</button>
-    </li>
-</ul>-->
+
 <table class="table table-hover">
     <thead>
       <tr>
@@ -30,6 +27,7 @@
         <td>{{player.age}}</td>
         <td>{{player.points}}</td>
         <td>{{player.tournsPlayed}}</td>
+        <td><a class="btn btn-danger" (click)="delete(player);$event.stopPropagation();">x</a></td>
       </tr>
     </tbody>
   </table>

@@ -20,13 +20,13 @@ var PlayersComponent = (function () {
         var _this = this;
         this.playerService.getPlayers().then(function (players) { return _this.players = players; });
     };
-    PlayersComponent.prototype.add = function (name) {
+    PlayersComponent.prototype.add = function (name, country) {
         var _this = this;
         name = name.trim();
         if (!name) {
             return;
         }
-        this.playerService.create(name)
+        this.playerService.create(name, country)
             .then(function (player) {
             _this.players.push(player);
             _this.selectedPlayer = null;

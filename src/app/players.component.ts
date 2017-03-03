@@ -9,7 +9,7 @@ import { OnInit } from '@angular/core';
 @Component({
   moduleId: module.id,
   templateUrl: 'players.component.html',
-  //styleUrls: ['./players.component.css']
+
 })
 export class PlayersComponent implements OnInit {
 
@@ -21,10 +21,10 @@ export class PlayersComponent implements OnInit {
   getPlayers(): void {
     this.playerService.getPlayers().then(players => this.players = players);
   }
-  add(name: string): void {
+  add(name: string,country:string): void {
     name = name.trim();
     if (!name) { return; }
-    this.playerService.create(name)
+    this.playerService.create(name,country)
       .then(player => {
         this.players.push(player);
         this.selectedPlayer = null;
