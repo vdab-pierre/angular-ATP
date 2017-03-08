@@ -21,7 +21,7 @@ var app_component_1 = require('./app.component');
 var player_detail_component_1 = require('./player-detail.component');
 var players_component_1 = require('./players.component');
 var player_service_1 = require('./player.service');
-var dashboard_component_1 = require('./dashboard.component');
+var top_component_1 = require('./top.component');
 var player_search_component_1 = require('./player-search.component');
 var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
@@ -34,7 +34,7 @@ var AppModule = (function () {
                 //bootstrap alert import part2
                 ng2_bootstrap_1.AlertModule.forRoot(),
             ],
-            declarations: [app_component_1.AppComponent, player_detail_component_1.PlayerDetailComponent, players_component_1.PlayersComponent, dashboard_component_1.DashboardComponent, player_search_component_1.PlayerSearchComponent],
+            declarations: [app_component_1.AppComponent, player_detail_component_1.PlayerDetailComponent, players_component_1.PlayersComponent, top_component_1.TopComponent, player_search_component_1.PlayerSearchComponent],
             bootstrap: [app_component_1.AppComponent],
             providers: [player_service_1.PlayerService]
         }), 

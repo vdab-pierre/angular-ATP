@@ -10,25 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var player_service_1 = require('./player.service');
-var DashboardComponent = (function () {
-    function DashboardComponent(playerService) {
+var TopComponent = (function () {
+    function TopComponent(playerService) {
         this.playerService = playerService;
         this.players = [];
     }
-    DashboardComponent.prototype.ngOnInit = function () {
+    TopComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.playerService.getPlayers().then(function (players) { return _this.players = players.slice(1, 5); });
+        this.playerService.getPlayers().then(function (players) { return _this.players = players.slice(1, 4); });
     };
-    DashboardComponent = __decorate([
+    TopComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'my-dashboard',
-            templateUrl: './dashboard.component.html',
-            styleUrls: ['./dashboard.component.css']
+            templateUrl: './top.component.html',
         }), 
         __metadata('design:paramtypes', [player_service_1.PlayerService])
-    ], DashboardComponent);
-    return DashboardComponent;
+    ], TopComponent);
+    return TopComponent;
 }());
-exports.DashboardComponent = DashboardComponent;
-//# sourceMappingURL=dashboard.component.js.map
+exports.TopComponent = TopComponent;
+//# sourceMappingURL=top.component.js.map

@@ -10,12 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var dashboard_component_1 = require('./dashboard.component');
+var top_component_1 = require('./top.component');
 var players_component_1 = require('./players.component');
 var player_detail_component_1 = require('./player-detail.component');
 var routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
+    { path: '', redirectTo: '/top', pathMatch: 'full' },
+    { path: 'top', component: top_component_1.TopComponent },
     { path: 'detail/:id', component: player_detail_component_1.PlayerDetailComponent },
     { path: 'players', component: players_component_1.PlayersComponent }
 ];

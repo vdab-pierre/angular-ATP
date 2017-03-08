@@ -14,7 +14,7 @@ import { AppComponent }  from './app.component';
 import { PlayerDetailComponent } from './player-detail.component';
 import { PlayersComponent } from './players.component';
 import { PlayerService } from './player.service';
-import { DashboardComponent } from './dashboard.component';
+import { TopComponent } from './top.component';
 import {PlayerSearchComponent} from './player-search.component';
 import{AppRoutingModule} from './app-routing.module';
 
@@ -25,7 +25,7 @@ import{AppRoutingModule} from './app-routing.module';
                     AlertModule.forRoot(),
                     //CollapseModule
                     ],
-  declarations: [ AppComponent,PlayerDetailComponent,PlayersComponent,DashboardComponent,PlayerSearchComponent ],
+  declarations: [ AppComponent,PlayerDetailComponent,PlayersComponent,TopComponent,PlayerSearchComponent ],
   bootstrap:    [ AppComponent ],
   providers:[PlayerService]
 })

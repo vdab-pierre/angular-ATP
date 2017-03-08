@@ -5,19 +5,17 @@ import { PlayerService } from './player.service';
 
 @Component({
     moduleId:module.id,
-    selector: 'my-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls:['./dashboard.component.css']
+    templateUrl: './top.component.html',
 })
 
-export class DashboardComponent implements OnInit { 
+export class TopComponent implements OnInit { 
     players:Player[]=[];
     
     constructor(private playerService:PlayerService){}
 
     ngOnInit():void{
         this.playerService.getPlayers().then(
-            players=>this.players = players.slice(1,5)
+            players=>this.players = players.slice(1,4)
         );
     }
 }

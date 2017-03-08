@@ -1,0 +1,9 @@
+<h3>Top Players</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let player of players;let i = index;"  [routerLink]="['/detail', player.id]">
+    <div class="module">
+      <h4><span class="badge">{{i+1}}</span> {{player.name}}</h4>
+    </div>
+  </a>
+</div>
+<player-search></player-search>
