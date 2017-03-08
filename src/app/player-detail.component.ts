@@ -10,7 +10,7 @@ import { PlayerService } from './player.service';
   moduleId: module.id,
   //selector: 'my-player-detail',
   templateUrl: 'player-detail.component.html',
-  styleUrls: ['player-detail.component.css']
+  //styleUrls: ['player-detail.component.css']
 })
 export class PlayerDetailComponent implements OnInit {
   @Input()

@@ -1,26 +1,28 @@
 <div *ngIf="player">
     <h2>{{player.name}} details!</h2>
-    <div><label>id: </label><span>{{player.id}}</span></div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="player.name" placeholder="name"/>
+    <div class="form-group">
+        <label for="playerId">id: </label><input id="playerId" [(ngModel)]="player.id" class="form-control" disabled/>
     </div>
-    <div>
-        <label>country: </label>
-        <input [(ngModel)]="player.country" placeholder="name"/>
+    <div class="form-group">
+        <label for="playerName">name: </label>
+        <input id="playerName" [(ngModel)]="player.name" placeholder="name" class="form-control" />
     </div>
-    <div>
-        <label>age: </label>
-        <input [(ngModel)]="player.age" placeholder="name"/>
+    <div class="form-group">
+        <label for="playerCountry">country: </label>
+        <input id="playerCountry" [(ngModel)]="player.country" placeholder="country" class="form-control" />
     </div>
-    <div>
-        <label>points: </label>
-        <input [(ngModel)]="player.points" placeholder="name"/>
+    <div class="form-group">
+        <label for="playerAge">age: </label>
+        <input id="playerAge" [(ngModel)]="player.age" placeholder="age" class="form-control" />
     </div>
-    <div>
-        <label>Tournaments played: </label>
-        <input [(ngModel)]="player.tournsPlayed" placeholder="name"/>
+    <div class="form-group">
+        <label for="playerPoints">points: </label>
+        <input id="playerPoints" [(ngModel)]="player.points" placeholder="points" class="form-control" />
     </div>
-    <button (click)="goBack()">Back</button>
-    <button (click)="save()">Save</button>
+    <div class="form-group">
+        <label for="playerTourns">Tournaments played: </label>
+        <input  id="playerTourns" [(ngModel)]="player.tournsPlayed" placeholder="tournaments played" class="form-control" />
+    </div>
+    <button (click)="goBack()" class="btn btn-primary">Back</button>
+    <button (click)="save()" class="btn btn-primary">Save</button>
 </div>

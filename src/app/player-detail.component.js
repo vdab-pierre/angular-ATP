@@ -43,7 +43,6 @@ var PlayerDetailComponent = (function () {
             moduleId: module.id,
             //selector: 'my-player-detail',
             templateUrl: 'player-detail.component.html',
-            styleUrls: ['player-detail.component.css']
         }), 
         __metadata('design:paramtypes', [player_service_1.PlayerService, router_1.ActivatedRoute, common_1.Location])
     ], PlayerDetailComponent);

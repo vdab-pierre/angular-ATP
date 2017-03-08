@@ -1,10 +1,10 @@
 <h2>Players</h2>
-<div class="form-group">
-    <label for="playerName">Player name</label> <input class="form-control" #playerName />
-    <label for="playerCountry">Country</label> <input class="form-control" #playerCountry />
-    <label for="playerAge">Age</label> <input class="form-control" #playerAge />
-    <label for="playerPoints">Points</label> <input class="form-control" #playerPoints />
-    <label for="playerTourns">Tournaments played</label> <input class="form-control" #playerTourns />
+<div>
+    <div class="form-group"><label for="playerName">Player name</label> <input class="form-control" #playerName /></div>
+    <div class="form-group"><label for="playerCountry">Country</label> <input class="form-control" #playerCountry /></div>
+    <div class="form-group"><label for="playerAge">Age</label> <input class="form-control" #playerAge /></div>
+    <div class="form-group"><label for="playerPoints">Points</label> <input class="form-control" #playerPoints /></div>
+    <div class="form-group"><label for="playerTourns">Tournaments played</label> <input class="form-control" #playerTourns /></div>
     <button class="btn btn-primary" (click)="add(playerName.value,playerCountry.value); playerName.value=''">Add</button>
 </div>
 
