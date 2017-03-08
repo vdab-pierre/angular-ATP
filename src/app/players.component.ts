@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Player } from './player';
-import { PlayerDetailComponent } from './player-detail.component';
+//import { PlayerDetailComponent } from './player-detail.component';
 import { PlayerService } from './player.service';
 import { OnInit } from '@angular/core';
 
@@ -21,14 +21,18 @@ export class PlayersComponent implements OnInit {
   getPlayers(): void {
     this.playerService.getPlayers().then(players => this.players = players);
   }
-  add(name: string,country:string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.playerService.create(name,country)
+  add(nameElm: HTMLInputElement, countryElm: HTMLInputElement, ageElm: HTMLInputElement, pointsElm: HTMLInputElement, tournsElm: HTMLInputElement): void {
+    //to do: values checken
+    this.playerService.create(nameElm.value.trim(), countryElm.value.trim(), parseInt(ageElm.value), parseInt(pointsElm.value), parseInt(tournsElm.value))
       .then(player => {
         this.players.push(player);
         this.selectedPlayer = null;
       });
+      nameElm.value="";
+      countryElm.value="";
+      ageElm.value="";
+      pointsElm.value="";
+      tournsElm.value="";
   }
 
   delete(player: Player): void {

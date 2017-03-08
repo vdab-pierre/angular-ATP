@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
+//import { PlayerDetailComponent } from './player-detail.component';
 var player_service_1 = require('./player.service');
 var PlayersComponent = (function () {
     function PlayersComponent(router, playerService) {
@@ -20,17 +21,19 @@ var PlayersComponent = (function () {
         var _this = this;
         this.playerService.getPlayers().then(function (players) { return _this.players = players; });
     };
-    PlayersComponent.prototype.add = function (name, country) {
+    PlayersComponent.prototype.add = function (nameElm, countryElm, ageElm, pointsElm, tournsElm) {
         var _this = this;
-        name = name.trim();
-        if (!name) {
-            return;
-        }
-        this.playerService.create(name, country)
+        //to do: values checken
+        this.playerService.create(nameElm.value.trim(), countryElm.value.trim(), parseInt(ageElm.value), parseInt(pointsElm.value), parseInt(tournsElm.value))
             .then(function (player) {
             _this.players.push(player);
             _this.selectedPlayer = null;
         });
+        nameElm.value = "";
+        countryElm.value = "";
+        ageElm.value = "";
+        pointsElm.value = "";
+        tournsElm.value = "";
     };
     PlayersComponent.prototype.delete = function (player) {
         var _this = this;
