@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-//import { PlayerDetailComponent } from './player-detail.component';
 var player_service_1 = require('./player.service');
 var PlayersComponent = (function () {
     function PlayersComponent(router, playerService) {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Player } from './player';
-//import { PlayerDetailComponent } from './player-detail.component';
+
 import { PlayerService } from './player.service';
 import { OnInit } from '@angular/core';
 
