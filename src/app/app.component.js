@@ -12,16 +12,12 @@ var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'ATP Rankings';
-        this.isCollapsed = true;
     }
-    AppComponent.prototype.toggleCollapse = function () {
-        this.isCollapsed = !this.isCollapsed;
-    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            templateUrl: './app.component.html',
+            templateUrl: './app.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
