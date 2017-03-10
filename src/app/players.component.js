@@ -15,6 +15,7 @@ var PlayersComponent = (function () {
     function PlayersComponent(router, playerService) {
         this.router = router;
         this.playerService = playerService;
+        this.showAddForm = false;
     }
     PlayersComponent.prototype.getPlayers = function () {
         var _this = this;
@@ -53,6 +54,9 @@ var PlayersComponent = (function () {
     };
     PlayersComponent.prototype.gotoDetail = function () {
         this.router.navigate(['/detail', this.selectedPlayer.id]);
+    };
+    PlayersComponent.prototype.ShowHideAddForm = function () {
+        this.showAddForm = !this.showAddForm;
     };
     PlayersComponent = __decorate([
         core_1.Component({

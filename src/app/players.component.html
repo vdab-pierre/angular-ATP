@@ -1,5 +1,6 @@
 <h2>Players</h2>
-<div>
+<button class="btn btn-primary" (click)="ShowHideAddForm()">Show/Hide AddForm</button>
+<div *ngIf="showAddForm">
   <div class="form-group">
     <label class="col-sm-2" for="playerName">Player name</label>
     <div class="col-sm-10">

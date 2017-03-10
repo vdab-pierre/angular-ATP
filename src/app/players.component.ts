@@ -15,6 +15,7 @@ export class PlayersComponent implements OnInit {
 
   players: Player[];
   selectedPlayer: Player;
+  showAddForm:boolean=false;
 
   constructor(private router: Router, private playerService: PlayerService) { }
 
@@ -53,5 +54,8 @@ export class PlayersComponent implements OnInit {
   }
   gotoDetail(): void {
     this.router.navigate(['/detail', this.selectedPlayer.id]);
+  }
+  ShowHideAddForm():void{
+    this.showAddForm=!this.showAddForm;
   }
 }
