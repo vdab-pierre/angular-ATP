@@ -48,6 +48,7 @@ var PlayersComponent = (function () {
     };
     PlayersComponent.prototype.onSelect = function (player) {
         this.selectedPlayer = player;
+        this.gotoDetail();
     };
     PlayersComponent.prototype.ngOnInit = function () {
         this.getPlayers();

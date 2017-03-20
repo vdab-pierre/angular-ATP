@@ -47,6 +47,7 @@ export class PlayersComponent implements OnInit {
 
   onSelect(player: Player): void {
     this.selectedPlayer = player;
+    this.gotoDetail();
   }
 
   ngOnInit(): void {
