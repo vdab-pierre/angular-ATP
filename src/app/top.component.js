@@ -17,7 +17,7 @@ var TopComponent = (function () {
     }
     TopComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.playerService.getPlayers().then(function (players) { return _this.players = players.slice(1, 4); });
+        this.playerService.getPlayers().then(function (players) { return _this.players = players.slice(0, 3); });
     };
     TopComponent = __decorate([
         core_1.Component({

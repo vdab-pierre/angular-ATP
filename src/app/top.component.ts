@@ -15,7 +15,7 @@ export class TopComponent implements OnInit {
 
     ngOnInit():void{
         this.playerService.getPlayers().then(
-            players=>this.players = players.slice(1,4)
+            players=>this.players = players.slice(0,3)
         );
     }
 }
