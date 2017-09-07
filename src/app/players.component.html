@@ -50,8 +50,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let player of players;let i = index" (click)="onSelect(player)" [class.selected]="player === selectedPlayer"
-      role="button">
+    <tr *ngFor="let player of players;let i = index" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
       <td>{{i+1}}</td>
       <td>{{player.name}}</td>
       <td>{{player.country}}</td>
